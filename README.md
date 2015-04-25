@@ -5,7 +5,7 @@ Re-usable pieces of python source code
 Handles creation of processes.
 - Reading from stdout and stderr
 ```
-#!
+
 from process_handler import Process
 p = Process("dir")
 output = p.run()
@@ -15,5 +15,5 @@ output = p.run()
 ```
 
 ## TODO ##
-- how to execute a subprocess, get return code, stdout and stderr, platform-independt
-- reference the performance test-case comparing lists and sets
+- how to interact with process created in background;
+- reference the performance test-case comparing lists and sets;
