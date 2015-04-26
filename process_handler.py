@@ -11,18 +11,17 @@ class Process(object):
             self.cwd = os.getcwd()
         else:
             self.cwd = dir
+        self.stdout = ""
+        self.stderr = ""
     def _shell_command(self):
         self.output = subprocess.check_output(self.command, shell=True,cwd=self.cwd)
-        return self.output
     def _execute_and_return(self):
         split_command = self.command.split()
         # windows limitation
         shell_commands = ["dir"]
         if split_command[0] in shell_commands:
-            return self._shell_command()
+            self._shell_command()
         else:
-            self.stdout = ""
-            self.stderr = ""
             try:
                 p = subprocess.Popen(
                     split_command,
@@ -34,14 +33,13 @@ class Process(object):
                 self.stderr = p.stderr.read()
             except Exception as e:
                 self.stderr = e
-            return self.stdout, self.stderr
     def _start_and_return_pid(self):
         raise RuntimeError
     def run(self):
         if self.bg == True:
-            return self._start_and_return_pid()
+            self._start_and_return_pid()
         else:
-            return self._execute_and_return()
+            self._execute_and_return()
         
 
             

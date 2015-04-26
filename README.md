@@ -8,13 +8,17 @@ Handles creation of processes.
 
 from process_handler import Process
 p = Process("dir")
-output = p.run()
+p.run()
+output = p.stdout
+error = p.stderr
 
 p = Process("git status", dir="path\to\your\dir")
-output = p.run()
+p.run()
+output = p.stdout
+error = p.stderr
+
 ```
 
 ## TODO ##
 - how to interact with process created in background;
-- refactor Process: store stdout and stderr in variable, run() should return void;
 - reference the performance test-case comparing lists and sets;
