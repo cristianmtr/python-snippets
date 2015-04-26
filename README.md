@@ -16,4 +16,5 @@ output = p.run()
 
 ## TODO ##
 - how to interact with process created in background;
+- refactor Process: store stdout and stderr in variable, run() should return void;
 - reference the performance test-case comparing lists and sets;

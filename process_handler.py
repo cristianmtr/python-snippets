@@ -16,7 +16,9 @@ class Process(object):
         return self.output
     def _execute_and_return(self):
         split_command = self.command.split()
-        if split_command[0] == "dir":
+        # windows limitation
+        shell_commands = ["dir"]
+        if split_command[0] in shell_commands:
             return self._shell_command()
         else:
             self.stdout = ""
