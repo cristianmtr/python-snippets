@@ -20,5 +20,7 @@ error = p.stderr
 ```
 
 ## TODO ##
+- simple wsgi
+- simple multiprocessing with queue
 - how to interact with process created in background;
 - reference the performance test-case comparing lists and sets;
