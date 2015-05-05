@@ -20,6 +20,7 @@ error = p.stderr
 ```
 
 ## TODO ##
+- handle reading salts correctly
 - simple wsgi
 - simple multiprocessing with queue
 - how to interact with process created in background;
