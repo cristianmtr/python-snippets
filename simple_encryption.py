@@ -24,10 +24,9 @@ def main():
 
     parameters = parser.parse_args()
 
-    print "Got salt from parameters: {}".format(parameters.salt)
-
-    print "Salt: "
-    salt = raw_input()
+    # TODO remove the line below and replace "salt" with parameters.salt in arguments passed
+    # to decrypt
+    salt = ""
     
     if parameters.operation == 'encrypt':
         encrypt(parameters.input, parameters.output, parameters.passphrase,
@@ -69,8 +68,9 @@ def encrypt(input_file, output_file, passphrase, rounds):
     return bcrypt_salt
 
 def decrypt(input_file, output_file, passphrase, salt):
-    print "Salt: %s" % (salt,)
-
+    print "Salt: "
+    salt = raw_input()
+    
     bcrypt_passphrase = hashpw(passphrase, salt)
     passphrase_hash = sha256(bcrypt_passphrase).digest()
 
