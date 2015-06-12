@@ -61,6 +61,7 @@ test text to encrypt
 ```
 
 ## TODO ##
+- sql: dump query for each step in the terminal
 - handle reading salts correctly from command-line options
 - simple wsgi
 - simple multiprocessing with queue
