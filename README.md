@@ -44,6 +44,16 @@ output = p.stdout
 error = p.stderr
 
 ```
+- and option two:
+```python
+from process_handler import shell_ex
+return_code, stdout, stderr = shell_ex("dir")
+print return_code, stdout, stderr
+> (0,
+> '#README.md#  process_handler.py   simple_encryption.py\nREADME.md    process_h
+>andler.pyc  sqlalchemy_automap\n',
+> '')
+```
 
 ## Simple_encryption: ##
 Encrypt and decrypt files using a passphrase, with salts and bcrypt

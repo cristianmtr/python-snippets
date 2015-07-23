@@ -42,4 +42,34 @@ class Process(object):
             self._execute_and_return()
         
 
-            
+def shell_ex(cmd, print_output=True, outputfile=None, outerrfile=None):
+    """
+    Executes a command and returns the exitcode, stdout output and stderr output
+    """
+    print "shell_ex - running '%s'" % cmd
+    if outputfile and not outerrfile:
+        outerrfile = '%s.err%s' % os.path.splitext(outputfile)
+    import subprocess
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = p.communicate()
+    exitcode = p.returncode
+    print "Return code: %d" % exitcode
+    if print_output:
+        print "-------- stdout:"
+        if stdout: print stdout
+        print "-------- stderr:"
+        if stderr: print stderr
+        print "--------"
+    if outputfile:
+        try:
+            with open(outputfile, 'w') as f:
+                f.write(stdout)
+        except:
+            print "Failed to write stdout output to '%s'" % outputfile
+    if outerrfile:
+        try:
+            with open(outerrfile, 'w') as f:
+                f.write(stderr)
+        except:
+            print "Failed to write stderr output to '%s'" % outerrfile
+    return exitcode, stdout, stderr            
