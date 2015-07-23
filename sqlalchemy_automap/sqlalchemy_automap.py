@@ -27,6 +27,7 @@ if __name__ == '__main__':
     # selecting just one employee
     some_employees = session.query(employee).filter_by(NAME="Paul").all()
 
+    print 'selecting just one employee'
     for emp in some_employees:
         print emp.NAME
 
