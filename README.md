@@ -70,6 +70,9 @@ test text to encrypt
 
 ```
 
+## Function decorator
+In func_decorator.py, you can find a simple example of how to do function decoration.
+
 ## TODO ##
 - sql: dump query for each step in the terminal
 - handle reading salts correctly from command-line options
