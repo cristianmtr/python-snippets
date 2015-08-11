@@ -1,6 +1,10 @@
 # PYTHON-SNIPPETS
 Re-usable pieces of python source code
 
+## Python singleton
+
+// TODO
+
 ## SQLAlchemy auto-mapping
 
 Say you have a database somewhere and you want to use and/or add data, but you don't want to bother with writing complex SQL queries, or bother with each particular engine's different syntax.
