@@ -51,7 +51,34 @@ python show_columns.py
 
 ## Process_handler: ##
 Handles creation of processes.
-- Reading from stdout and stderr
+
+### Solution one ###
+
+```python
+from process_handler import popen_improved
+
+
+node_version = popen_improved(["node.exe", "--version"])
+print node_version.output
+print node_version.err
+print node_version.exit_code
+```
+
+Will look like:
+```
+In [5]: node_version.output
+Out[5]: 'v5.7.1'
+
+In [6]: node_version.err
+Out[6]: ''
+
+In [7]: node_version.exit_code
+Out[7]: 0
+```
+
+### Solution two ###
+
+Reading from stdout and stderr:
 
 ```python
 from process_handler import Process
@@ -66,7 +93,9 @@ output = p.stdout
 error = p.stderr
 
 ```
-- and option two:
+
+### solution three ###
+
 ```python
 from process_handler import shell_ex
 return_code, stdout, stderr = shell_ex("dir")
