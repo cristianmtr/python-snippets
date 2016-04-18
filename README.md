@@ -5,6 +5,24 @@ Re-usable pieces of python source code
 
 // TODO
 
+## MODULE LOGGER
+
+Usage:
+```python
+from get_logger import get_module_logger
+
+
+my_logger = get_module_logger(__name__)
+my_logger.info("Hello from module!")
+my_logger.error("Oups, something went wrong")
+```
+
+Will look like:
+```
+INFO:__main__:Hello from module!
+ERROR:__main__:Oups, something went wrong
+```
+
 ## SQLAlchemy auto-mapping
 
 Say you have a database somewhere and you want to use and/or add data, but you don't want to bother with writing complex SQL queries, or bother with each particular engine's different syntax.
