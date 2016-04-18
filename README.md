@@ -1,5 +1,5 @@
-# PYTHON-SNIPPETS
-Re-usable pieces of python source code
+# PYTHON SNIPPETS
+Re-usable pieces of python code
 
 ## Python singleton
 
