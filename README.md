@@ -124,6 +124,32 @@ test text to encrypt
 ## Function decorator
 In func_decorator.py, you can find a simple example of how to do function decoration.
 
+## Apache config reader
+
+Example of how to use:
+
+```python
+a = ApacheConfig.parse_file("httpd.conf")
+for chld in a.children:
+  print chld.name, ": ", chld.values
+```
+
+Output example:
+```
+ServerRoot :  ['"d:/Apache24"']
+LoadModule :  ['access_compat_module', 'modules/mod_access_compat.so']
+LoadModule :  ['actions_module', 'modules/mod_actions.so']
+[...]
+IfModule :  ['unixd_module']
+ServerAdmin :  ['admin@domain.com']
+ServerName :  ['172.16.185.163:80']
+Directory :  ['/']
+DocumentRoot :  ['"d:/htdocs"']
+Directory :  ['"d:/htdocs"']
+[...]
+```
+            
+
 ## TODO ##
 - sql: dump query for each step in the terminal
 - handle reading salts correctly from command-line options
