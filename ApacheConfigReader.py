@@ -85,9 +85,8 @@ class ApacheConfig(object):
         """Example of how to use:
 
         a = ApacheConfig.parse_file("httpd.conf")
-
-        for chld in a.children:
-            print chld.name, ": ", chld.values
+        
+        Then print using helper method above: print_r
 
         Args:
             file (string): file name e.g. "httpd.conf"
