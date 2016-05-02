@@ -1,7 +1,5 @@
 import logging
 
-import sys
-
 
 def get_module_logger(name):
     """Get a logger for the module name
