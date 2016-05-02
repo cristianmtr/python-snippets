@@ -12,13 +12,14 @@ def get_module_logger(name):
              instance.
 
     """
-    logger = logging.getLogger(name)
+    return_logger = logging.getLogger(name)
     handler = logging.StreamHandler()
     formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         datefmt='%Y-%m-%d %H:%M')
-    logger.addHandler(handler)
+    handler.setFormatter(formatter)
+    return_logger.addHandler(handler)
     # set to DEBUG to make sure all messages get logged
     # https://docs.python.org/2/library/logging.html#logging.Logger.setLevel
-    logger.setLevel(logging.DEBUG)
-    return logger
+    return_logger.setLevel(logging.DEBUG)
+    return return_logger
