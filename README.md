@@ -19,8 +19,8 @@ my_logger.error("Oups, something went wrong")
 
 Will look like:
 ```
-INFO:__main__:Hello from module!
-ERROR:__main__:Oups, something went wrong
+2016-05-03 10:44 - __main__ - INFO - Hello from module!
+2016-05-03 10:44 - __main__ - ERROR - Oups, something went wrong
 ```
 
 ## SQLAlchemy auto-mapping
