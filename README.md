@@ -149,6 +149,12 @@ Directory :  ['"d:/htdocs"']
 [...]
 ```
             
+## COMMON PREFIX IN PATH
+
+Usage:
+```
+commonprefix(["C:\Users","C:\Users\Cristian"])
+```
 
 ## TODO ##
 - sql: dump query for each step in the terminal
@@ -157,3 +163,4 @@ Directory :  ['"d:/htdocs"']
 - simple multiprocessing with queue
 - how to interact with process created in background;
 - reference the performance test-case comparing lists and sets;
+
